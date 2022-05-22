@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#Bash script that sets up your web servers for the deployment of web_static. It must:
-#
+# Bash script that sets up your web servers for the deployment of web_static. It must:
 #    Install Nginx if it not already installed
 #    Create the folder /data/ if it doesn’t already exist
 #    Create the folder /data/web_static/ if it doesn’t already exist
@@ -16,7 +15,7 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo mkdir -p /data/web_static/releases/test /data/web_static/shared
-echo "Test index.html file to test Nginx config" | sudo tee /data/web_static/releases/test/index.html
+echo "Testing testing 1, 2, 3... " | sudo tee /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data
 sudo sed -i '/listen 80 default_server/a location /hbnb_static/ { alias /data/web_static/current/;}' /etc/nginx/sites-available/default
