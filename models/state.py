@@ -20,6 +20,7 @@ class State(BaseModel, Base):
         def cities(self):
             """ Return the list of cities by State """
             from models import storage
+
             cities_by_state = []
             for obj in storage.all(City).values():
                 if obj.state_id == self.id:
