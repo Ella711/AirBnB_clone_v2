@@ -15,7 +15,7 @@ app.url_map.strict_slashes = False
 def fetch_states():
     """ Fetch all states and display on html page """
     states = storage.all(State)
-    return render_template('7-states_list.html', state_objs=states)
+    return render_template('7-states_list.html', states=states)
 
 
 @app.teardown_appcontext
